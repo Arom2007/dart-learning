@@ -81,7 +81,62 @@ evenList.insertAll(5, [12, 14, 16]);
 print(evenList);
 
 
+// Replace range of list
+var list = [10, 15, 20, 25, 30];
+print("List before updation: $list");
+list.replaceRange(0, 4, [5, 6, 7, 8]); // replaces the first 4 items of list 
+print("List after updation using replaceAll() function : $list");
 
 
+// Removing List Elements
+// remove() removes one specific element at a time from the list
+// removeAt() removes an element from the specified index position and returns it
+// removeLast() removes the last element from the list
+// removeRange() removes the items within the specified range
 
+
+var oddList = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29];
+print(oddList);
+
+oddList.remove(29);
+print(oddList);
+
+oddList.removeAt(13);
+print(oddList);
+
+oddList.removeLast();
+print(oddList);
+
+oddList.removeRange(9, 12);
+print(oddList);
+
+
+// Loops in list
+oddList.forEach((n) => print(n));
+
+
+// Multiply all value in list by 2
+var lisht = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var doubledLisht = lisht.map((n) => n*2);
+print(doubledLisht);
+
+
+// Combine two or more list in dart
+List<String> naam = ["aata", "bata", "cata"];
+List<String> naam2 = ["data", "eata", "fata"];
+List<String> allNaam = [...naam, ...naam2];
+print(allNaam);
+
+
+// Conditions in List
+bool sad = true;
+var cart = ["milk", "ghee", if (sad) "orange juice"];
+print(cart);
+
+
+// Where In List 
+// Where can be used with list to filter specific items
+var nambera = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+var even = nambera.where((number) => number.isEven).toList();
+print(even);
 }
