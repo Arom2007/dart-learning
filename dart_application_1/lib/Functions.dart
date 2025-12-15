@@ -112,6 +112,7 @@ void abc() {
 
 // Generating Random Numbers in Dart
 void tryingDartMath() {
+  // ignore: unnecessary_new
   Random random = new Random(); // IMPORTANT
   int randomNumber = random.nextInt(10);
   // randomNumber will be assigned a random number between 0 to 9.
