@@ -112,7 +112,7 @@ void abc() {
 
 // Generating Random Numbers in Dart
 void tryingDartMath() {
-  Random random = new Random();
+  Random random = new Random(); // IMPORTANT
   int randomNumber = random.nextInt(10);
   // randomNumber will be assigned a random number between 0 to 9.
   print("Random number between 0 to 9 is $randomNumber.");
@@ -131,6 +131,18 @@ void tryingDartMath() {
   int max = 20;
   int randomNum = min + Random().nextInt((max + 1) - min);
   print("Random number generated between $min and $max is $randomNum.");
+
+
+  // Generating Random Boolean and Double Values
+  double randomDouble = Random().nextDouble();
+  bool randomBoolean = Random().nextBool();
+  print("Randomly generated double value is $randomDouble.");
+  print("Randomly generated boolean value is $randomBoolean.");
+
+
+  // Generating a List of Random Numbers in Dart
+  List<int> randomList = List.generate(10, (_) => Random().nextInt(100)+1);
+  print(randomList);
 }
 
 
