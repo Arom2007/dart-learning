@@ -143,6 +143,13 @@ void tryingDartMath() {
   // Generating a List of Random Numbers in Dart
   List<int> randomList = List.generate(10, (_) => Random().nextInt(100)+1);
   print(randomList);
+
+
+  // Useful Math Functions in Dart
+  // pow(10, 2) is equal to 10 ^ 2 which is 100.
+  // max(10, 2) outputs the greater number among the 2 which is 10.
+  // min(10, 2) outputs the lesser number among the 2 which is 2.
+  // sqrt(25) outputs the square root of 25 which is 5.
 }
 
 
