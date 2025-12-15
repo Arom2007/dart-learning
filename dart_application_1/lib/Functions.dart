@@ -58,6 +58,13 @@ void printInformation({String? name, String? gender}) {
   print("$name bruv you are a $gender");
 }
 
+
+// Use of Required in Named Parameter
+void printNameAge({required String name, required int age}) {
+  // Here if the person's name and age isnt passed, the function wont work.
+  print("Hello $name! Are you $age years old?");
+}
+
 void main() {
   printName();
 
@@ -74,5 +81,9 @@ void main() {
   printInformation(gender: "waterbottle", name: "Chingis Khan");
   // When defining the parameters for printInformation, name was first and gender was second.
   // But using named parameter we can pass the value as gender first and name second and still get the correct result.
-  
+
+
+  printNameAge(age: 18, name: "Kumalala");
+  // As required keyword was used, the function will not work until name and age has been provided.
+   
 }
