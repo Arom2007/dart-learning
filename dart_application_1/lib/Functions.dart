@@ -65,6 +65,15 @@ void printNameAge({required String name, required int age}) {
   print("Hello $name! Are you $age years old?");
 }
 
+
+// Use of Optional Parameter
+void printFavChar(String name, String charName, [String? title]) {
+  print("$name, your favorite character is $title $charName");
+  // Here charName is an optional parameter.
+  // The function will work regardless if title is passed or not.
+}
+
+
 void main() {
   printName();
 
@@ -75,15 +84,15 @@ void main() {
   cuber(67);
 
   printInfo("Salmon", "man");
-
   printInfo("Gargah", "gawar", "maam");
 
   printInformation(gender: "waterbottle", name: "Chingis Khan");
   // When defining the parameters for printInformation, name was first and gender was second.
   // But using named parameter we can pass the value as gender first and name second and still get the correct result.
 
-
   printNameAge(age: 18, name: "Kumalala");
   // As required keyword was used, the function will not work until name and age has been provided.
-   
+
+  printFavChar("Arom", "Spider-Man", "");
+  printFavChar("Ganjan", "Strange", "Dr."); 
 }
