@@ -95,4 +95,16 @@ void main() {
 
   printFavChar("Arom", "Spider-Man", "");
   printFavChar("Ganjan", "Strange", "Dr."); 
+
+
+  // Anonymous Function in Dart
+  // An anonymous function is one that may not have a name nor a return type.
+  // Example
+  var cube = (int nember) {
+    return nember * nember * nember;
+  };
+  print("Cube of 2 is ${cube(2)}");
+  
+
+
 }
