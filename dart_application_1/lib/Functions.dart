@@ -74,6 +74,14 @@ void printFavChar(String name, String charName, [String? title]) {
 }
 
 
+// Arrow Function in Dart
+// Arrow function is used for the function body with only one line.
+// It is represented by => symbol.
+// Syntax:
+// returnType functionName(parameters) => expression;
+// => expression; is equivalent to return expression;
+double simpInt(double P, double R, double T) => (P*R*T)/100;
+
 void main() {
   printName();
 
@@ -100,10 +108,14 @@ void main() {
   // Anonymous Function in Dart
   // An anonymous function is one that may not have a name nor a return type.
   // Example
+  // ignore: prefer_function_declarations_over_variables
   var cube = (int nember) {
     return nember * nember * nember;
   };
   print("Cube of 2 is ${cube(2)}");
+
+
+  print("Simple interest is equal to ${simpInt(16, 17.5, 34)}");
   
 
 
