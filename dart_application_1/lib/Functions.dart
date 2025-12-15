@@ -1,3 +1,4 @@
+import 'dart:math';
 // ignore: file_name
 // ignore_for_file: file_names
 
@@ -105,6 +106,34 @@ void abc() {
   print(global);
 }
 
+
+// Math in Dart
+// To use math in dart, you must use import 'dart:math';
+
+// Generating Random Numbers in Dart
+void tryingDartMath() {
+  Random random = new Random();
+  int randomNumber = random.nextInt(10);
+  // randomNumber will be assigned a random number between 0 to 9.
+  print("Random number between 0 to 9 is $randomNumber.");
+
+  int randomNumber2 = random.nextInt(10) + 1;
+  // randomNumber2 will be assigned a random number between 1 to 10.
+  print("Random number between 1 to 10 is $randomNumber2.");
+
+
+  // Generating Random Number Between any Number
+  // A formula needs to be used to generate a random number between any numbers in dart.
+  // Formula:
+  // min + Random().nextInt((max + 1) - min);
+  // If you want a random number between 10 to 20, min becomes 10 and max becomes 20.
+  int min = 10;
+  int max = 20;
+  int randomNum = min + Random().nextInt((max + 1) - min);
+  print("Random number generated between $min and $max is $randomNum.");
+}
+
+
 void main() {
   printName();
 
@@ -140,6 +169,8 @@ void main() {
 
   print("Simple interest is equal to ${simpInt(16, 17.5, 34)}");
   
+
+  tryingDartMath();
 
 
 }
