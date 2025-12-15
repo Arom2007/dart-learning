@@ -82,6 +82,29 @@ void printFavChar(String name, String charName, [String? title]) {
 // => expression; is equivalent to return expression;
 double simpInt(double P, double R, double T) => (P*R*T)/100;
 
+
+// Scope in Dart
+// Scope is a concept that refers to where values can be accessed or referenced.
+// Dart uses curly braces {} to determine the scope of variables.
+// Usually variables inside curly braces cant be used outside the curly braces.
+
+// Method Scope
+// If you create variables inside the method, they can be used inside the method block but not outside it.
+// Example
+void men() {
+  String text = "This text is inside the men function. It cant be accessed outside this function.";
+  print(text);
+  // If print(text); is used outside the men function it wont print this line to string.
+}
+
+// Global Scope
+// If a variable is defined in the global scope it can be used anywhere in your program.
+// Example
+String global = "This text is global. It can be access from anywhere in the program.";
+void abc() {
+  print(global);
+}
+
 void main() {
   printName();
 
