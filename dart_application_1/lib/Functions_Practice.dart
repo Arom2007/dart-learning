@@ -48,6 +48,51 @@ void reverseString(String text) {
 }
 
 
+// Function to cube number
+void cube(int numb) {
+  print("Cube of $numb is ${numb * numb * numb}");
+}
+
+
+// Function to add 2 integers
+int add(int num1, int num2) => num1 + num2;
+
+
+// Function that takes 2 number arguments and returns the larger number
+int largerNum(int num1, int num2) {
+  if (num1 > num2){
+    return num1;
+  }
+  else {
+    return num2;
+  }
+}
+
+
+// Function that returns true if number is even
+bool isEven(int numba) {
+  if (numba % 2 == 0) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+
+// Function with parameters name, age and isActive where isActive has a default value of true
+void createUser(String name, int age, [bool isActive = true]) {
+  print("User $name is $age years old and their active status is $isActive");
+}
+
+
+// Function to calculate area of rectangle with default length and width of 1
+void rectangleArea([double length = 1, double width = 1]) {
+  print("Area of rectangle with length $length cm and width $width cm is ${length * width}");
+}
+
+
+
 
 
 void main() {
@@ -62,4 +107,18 @@ void main() {
   circleArea(7);
 
   reverseString("hanoog hagras");
+
+  cube(5);
+
+  int sum = add(67, 41);
+  print("Sum of 67 and 41 is $sum");
+
+  int largerNumber = largerNum(41, 67);
+  print("The larger number between 41 and 67 is $largerNumber");
+
+  print("${isEven(32)}");
+
+  createUser("Manjan", 2);
+
+  rectangleArea(5, 25);
 }
