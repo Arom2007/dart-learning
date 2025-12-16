@@ -241,7 +241,21 @@ Map<String, String> nameLastName = {
 };
 print(nameLastName);
 
+
 // Access Value from Key
 print("Value of key 'Nitesh' is ${nameLastName['Nitesh']}");
 
+
+// Map Properties in Dart
+// keys gets all keys
+// values gets all values
+// isEmpty returns true or false
+// isNotEmpty returns true or false
+// length returns the length of the map
+
+print("All keys in nameLastName map are ${nameLastName.keys} ");
+print("All values in nameLastName map are ${nameLastName.values}");
+print("Is the map empty? ${nameLastName.isEmpty}");
+print("Is the map not empty? ${nameLastName.isNotEmpty}");
+print("Length of the map is ${nameLastName.length}");
 }
