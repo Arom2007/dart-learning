@@ -73,6 +73,29 @@ class Bicycle {
   }
 }
 
+class Camera {
+  String? name;
+  String? color;
+  int? megaPixel;
+
+  void displayInfo() {
+    print("Camera name : $name");
+    print("Camera color : $color");
+    print("Camera mega pixel : $megaPixel");
+  }
+}
+
+
+class SimpleInterest {
+  int? principal;
+  int? rate;
+  int? time;
+
+  double impleSinterest() {
+    return (principal! * rate! * time!)/100;
+  }
+}
+
 
 void main() {
   Bicycle bikykle = Bicycle();
@@ -82,4 +105,18 @@ void main() {
   bikykle.maxSpeed = 1500;
   bikykle.changeGear(1945);
   bikykle.bicycleInfo();
+
+
+  Camera kamera = Camera();
+  kamera.name = "David";
+  kamera.color = "Breen";
+  kamera.megaPixel = 3;
+  kamera.displayInfo();
+
+
+  SimpleInterest shrimpl = SimpleInterest();
+  shrimpl.principal = 560;
+  shrimpl.rate = 4;
+  shrimpl.time = 15;
+  print("Simple interest = ${shrimpl.impleSinterest()}");
 }
