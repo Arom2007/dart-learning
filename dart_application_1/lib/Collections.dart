@@ -1,5 +1,5 @@
-// ignore: file_names
 // ignore: file_name
+// ignore_for_file: file_names
 
 void main() {
 // List in Dart
@@ -113,6 +113,7 @@ print(oddList);
 
 
 // Loops in list
+// ignore: avoid_function_literals_in_foreach_calls
 oddList.forEach((n) => print(n));
 
 
