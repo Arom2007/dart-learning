@@ -237,7 +237,8 @@ Map<String, String> nameLastName = {
   'Arom' : 'Pradhan',
   'Bibhor' : 'Yadav',
   'Aayam' : 'Aacharya',
-  'Nitesh' : 'Devkota'  
+  'Nitesh' : 'Devkota',
+  'Mango' : 'Mustard'
 };
 print(nameLastName);
 
@@ -258,4 +259,57 @@ print("All values in nameLastName map are ${nameLastName.values}");
 print("Is the map empty? ${nameLastName.isEmpty}");
 print("Is the map not empty? ${nameLastName.isNotEmpty}");
 print("Length of the map is ${nameLastName.length}");
+
+
+// Adding Elements to Map
+nameLastName['Gargah'] = 'Dangol';
+print(nameLastName);
+
+
+// Updating an Element of Map
+nameLastName['Sanjan'] = 'Raj Pant';
+print(nameLastName);
+
+
+// Map Methods in Dart
+// keys.toList() converts all map's keys to a list
+// values.toList() converts all map's values to a list
+// containsKey('key') checks if key exists and returns true or false
+// containsValue('value') checks if value exists and returns true or false
+// remove('key') removes the key and its value from the list
+// clear() removes all elements from the map
+// removeWhere() removes all elements if condition is met
+
+print("A list of all keys in map nameLastName: ${nameLastName.keys.toList()}");
+print("A list of all values in map nameLastName: ${nameLastName.values.toList()}");
+
+print("Does the map contain key Gargah? ${nameLastName.containsKey('Gargah')}");
+print("Does the map contain value Devkota? ${nameLastName.containsValue('Devkota')}");
+
+nameLastName.remove('Mango');
+print(nameLastName);
+
+//removeWhere()
+Map<String, double> mathMarks = {
+    "ram": 30,
+    "mark": 32,
+    "harry": 88,
+    "raj": 69,
+    "john": 15,
+};
+mathMarks.removeWhere((key, value) => value < 32);
+print(mathMarks);
+
+
+// Looping over element in map
+for(MapEntry name in nameLastName.entries) {
+    print("Key is ${name.key} and value is ${name.value}.");
+}
+
+
+// Looping in Map using For Each
+nameLastName.forEach((key, value) => print("Key is $key and value is $value."));
+
+
+
 }
