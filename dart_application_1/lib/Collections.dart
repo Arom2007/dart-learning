@@ -311,5 +311,31 @@ for(MapEntry name in nameLastName.entries) {
 nameLastName.forEach((key, value) => print("Key is $key and value is $value."));
 
 
+print("-" * 60);
 
+
+// Where In Dart
+List<int> nambers = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+List<int> oddNambers = nambers.where((namber) => namber.isOdd).toList();
+print(oddNambers);
+
+
+// Filter days starting with 'S'
+List<String> days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+List<String> dayStartingWithS = days.where((day) => day.startsWith("S")).toList();
+print(dayStartingWithS);
+
+
+// Where filter in Map
+Map<String, double> myathMarks = {
+    "ram": 30,
+    "mark": 32,
+    "harry": 88,
+    "raj": 69,
+    "john": 15,
+  };
+
+  myathMarks.removeWhere((key, value) => value < 32);
+
+  print(myathMarks);
 }
