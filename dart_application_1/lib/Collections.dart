@@ -1,5 +1,5 @@
+// ignore: file_names
 // ignore: file_name
-import 'dart:math';
 
 void main() {
 // List in Dart
@@ -37,6 +37,7 @@ names1[1] = "Bhilla"; // possible
 names1[2] = "Melon"; // possible
     
 const List<String> names2 = ["Raj", "John", "Rocky"]; // Immutable List
+print(names2);
 /*
 names2[1] = "Oggy"; // not possible
 names2[2] = "DeeDee"; // not possible
@@ -139,4 +140,88 @@ print(cart);
 var nambera = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 var even = nambera.where((number) => number.isEven).toList();
 print(even);
+
+
+print("-" * 60);
+
+
+// Set in Dart
+// Set is a unique collection of items.
+// You cannot store duplicate values in a set.
+// It is unordered, so it can be faster than a list when working with large amounts of data.
+// Sets are used when you need to store unique values without considering the order of the input.
+// Syntax:
+// Set<variable_type> variable_name = {};
+
+Set<String> fruits = {"Apple", "Orange", "Banana", "Mango", "Papaya", "Guava", "Strawberry"};
+print("Set of fruit names: $fruits");
+
+// Set Properties in Dart
+// first gets the first value of the set
+// last gets the last value of the set
+// isEmpty returns true or false
+// isNotEmpty also returns true or false
+// length returns the length of the set
+
+print("First value of the set is ${fruits.first}");
+print("Last value of set ${fruits.last}");
+print("Is the set empty? ${fruits.isEmpty}");
+print("Is the set not empty? ${fruits.isNotEmpty}");
+print("The length of set fruits is ${fruits.length} ");
+
+
+// Check the available value in a set
+// The contains method can be used to see if a set contains a specific item or not.
+// It returns true or false.
+
+print("Does the set contain Mango? ${fruits.contains("Mango")}");
+print("Does the set contain Dwayne the Rock Johnson? ${fruits.contains("Dwayne the Rock Johnson")}");
+
+
+// Adding and Removing items in Set
+// add() adds one element to set
+// remove() removes one element from set
+fruits.add("Lemon");
+fruits.add("Grape");
+print("Lemon and Grape added to the set.");
+print(fruits);
+
+fruits.remove("Papaya");
+print("Papaya removed from set");
+print(fruits);
+
+
+// Adding Multiple Elements to a set
+fruits.addAll(["Plum", "Cranberry", "Pineapple", "Watermelon",]);
+print("Plum, cranberry, pineapple and watermelon added to the set.");
+print(fruits);
+
+
+// Printing all values in a set individually
+for (String fruit in fruits) {
+    print(fruit);
+}
+
+
+// Set Methods in Dart
+// clear() removes all elements from the set
+// difference() creates a new set with the elements of this set that are not in the other
+// elementAt() returns the index value of element
+// intersection() finds common elements in two sets
+
+Set<String> yapple = {"papple"};
+yapple.clear();
+print(yapple);
+
+Set<int> numbaSet1 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+Set<int> numbaSet2 = {1, 2, 3, 4, 5};
+var differenceSet = numbaSet1.difference(numbaSet2);
+print("setNumba1 has elements $differenceSet that are not in setNumba2.");
+
+print("Element at index 4 is ${fruits.elementAt(4)}");
+
+var intersectionSet = numbaSet1.intersection(numbaSet2);
+print("Common elements of the two sets are $intersectionSet");
+
+
 }
