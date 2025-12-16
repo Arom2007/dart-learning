@@ -224,4 +224,24 @@ var intersectionSet = numbaSet1.intersection(numbaSet2);
 print("Common elements of the two sets are $intersectionSet");
 
 
+print("-" * 60);
+
+
+// Map in Dart
+// In a map, data can be stored as keys and values.
+// Each key must be unique.
+// They are similar to dictionaries in python.
+
+Map<String, String> nameLastName = {
+  'Sanjan' : 'Pant',
+  'Arom' : 'Pradhan',
+  'Bibhor' : 'Yadav',
+  'Aayam' : 'Aacharya',
+  'Nitesh' : 'Devkota'  
+};
+print(nameLastName);
+
+// Access Value from Key
+print("Value of key 'Nitesh' is ${nameLastName['Nitesh']}");
+
 }
