@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, prefer_initializing_formals
 
 // Class in Dart
 /* 
@@ -97,6 +97,56 @@ class SimpleInterest {
 }
 
 
+// Constructor in Dart
+// A constructor is a special method used to initialise an object.
+// It is automatically called when an object is created.
+// All of the above classes have been made without using a constructor.
+/* 
+
+Syntax:
+class ClassName {
+  // Constructor declaration (same name as ClassName)
+  ClassName() {
+    // body of the constructor  
+  }
+}
+
+*/
+
+class Teacher {
+  String? name;
+  int? age;
+  int? rollNumber;
+
+  // Constructor
+  Teacher(String name, int age, int rollNumber) {
+    print("Constructor called"); // This is just to check if constructor gets called or not
+    this.name = name;
+    this.age = age;
+    this.rollNumber = rollNumber;
+  }
+}
+
+
+// The constructor can be written in a single line
+class College {
+  String? name;
+  String? location;
+  int? rank;
+  int? numStudents;
+
+  //Constructor in short form
+  College(this.name, this.location, this.rank, this.numStudents);
+
+  void printInfo() {
+    print("Name of the college is $name.");
+    print("It is located in $location.");
+    print("Nationally it is ranked $rank.");
+    print("It has $numStudents students.");
+  }
+}
+
+
 void main() {
   Bicycle bikykle = Bicycle();
   bikykle.brand = "Bap";
@@ -119,4 +169,14 @@ void main() {
   shrimpl.rate = 4;
   shrimpl.time = 15;
   print("Simple interest = ${shrimpl.impleSinterest()}");
+
+
+Teacher teacher = Teacher("LoanDon", 21, 8);
+print("Name : ${teacher.name}");
+print("Age : ${teacher.age}");
+print("Roll Number : ${teacher.rollNumber}");
+
+
+College college = College("Dark Future College", "Kaalo Chowk", 89, 3);
+college.printInfo();
 }
