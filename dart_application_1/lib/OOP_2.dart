@@ -47,11 +47,32 @@ class Vehicle {
   String get model => _model!;
   int get year => _year!;
 
-  // Setter methos using set
+  // Setter method using set
   set model(String model) => _model = model;
   set year(int year) => _year = year;
   
 }
+
+
+// Setter in dart with data validation
+class NoteBook {
+  String? _name;
+  int? _price;
+
+  set name(String name) => _name = name;
+
+  set price(int price) {
+    if (price < 0) {
+      throw Exception("Price cannot be less than 0");
+    }
+    _price = price;
+  }
+
+  void display() {
+    print("Name of notebook is $_name and its price is $_price rupees.");
+  }
+}
+
 
 
 void main() {
@@ -73,6 +94,15 @@ void main() {
   vehicle.year = 2019;
   print("Vehicle model is ${vehicle.model}.");
   print("Vehicle year is ${vehicle.year}.");
+
+
+  print("-" * 60);
+
+
+  NoteBook notebook = NoteBook();
+  notebook.name = "Benjamin";
+  notebook.price = 410;
+  notebook.display();
 
 
   print("-" * 60);
