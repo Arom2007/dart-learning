@@ -8,8 +8,6 @@ class ClassName {
   // methods or functions of the class
 }
 */
-import 'dart:math';
-
 class Person {
   String? name;
   String? phone;
@@ -196,6 +194,31 @@ class Table {
 }
 
 
+// Default constructor in dart
+class Laptop {
+  String? brand;
+  int? price;
+
+  // Default constructor
+  Laptop() {
+    brand = "Hey Sir";
+    price = 60000;
+  }
+}
+
+
+// Constant constructor in dart
+// Constant constructor is a constructor that creates a constant object.
+// A constant object is an object whose value cannot be changed.
+class Point {
+  final int x;
+  final int y;
+
+  const Point(this.x, this.y);
+}
+
+
+
 void main() {
   Bicycle bikykle = Bicycle();
   bikykle.brand = "Bap";
@@ -206,11 +229,17 @@ void main() {
   bikykle.bicycleInfo();
 
 
+  print("-" * 60);
+
+
   Camera kamera = Camera();
   kamera.name = "David";
   kamera.color = "Breen";
   kamera.megaPixel = 3;
   kamera.displayInfo();
+
+
+  print("-" * 60);
 
 
   SimpleInterest shrimpl = SimpleInterest();
@@ -220,20 +249,65 @@ void main() {
   print("Simple interest = ${shrimpl.impleSinterest()}");
 
 
+  print("-" * 60);
+
+
 Teacher teacher = Teacher("LoanDon", 21, 8);
 print("Name : ${teacher.name}");
 print("Age : ${teacher.age}");
 print("Roll Number : ${teacher.rollNumber}");
 
 
+print("-" * 60);
+
+
 College college = College("Dark Future College", "Kaalo Chowk", 89, 3);
 college.printInfo();
+
+
+print("-" * 60);
 
 
 Employee employee = Employee("Darby", 57, "Gambler");
 employee.displayInfo();
 
 
+print("-" * 60);
+
+
 Chair chair = Chair(color : "black", name : "Khum");
 chair.display();
+
+
+print("-" * 60);
+
+
+Table table = Table();
+table.display();
+
+
+print("-" * 60);
+
+
+Laptop laptop = Laptop();
+laptop.price = 80000;
+print("Laptop brand is ${laptop.brand} and cost Rs ${laptop.price}.");
+
+
+print("-" * 60);
+
+
+// p1 and p2 has the same hash code.
+Point p1 = const Point(1, 2);
+print("The p1 hash code is: ${p1.hashCode}");
+
+Point p2 = const Point(1, 2);
+print("The p2 hash code is: ${p2.hashCode}");
+// without using const
+// this has different hash code.
+Point p3 = Point(2, 2);
+print("The p3 hash code is: ${p3.hashCode}");
+
+Point p4 = Point(2, 2);
+print("The p4 hash code is: ${p4.hashCode}");
 }
