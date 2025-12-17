@@ -8,6 +8,8 @@ class ClassName {
   // methods or functions of the class
 }
 */
+import 'dart:math';
+
 class Person {
   String? name;
   String? phone;
@@ -147,6 +149,53 @@ class College {
 }
 
 
+// Constructors with optional parameters
+class Employee {
+  String? name;
+  int? age;
+  String? position;
+  String? salary;
+
+  // Constructor 
+  Employee(this.name, this.age, [this.position = "Redacted", this.salary = "Unknown"]);
+
+  void displayInfo() {
+    print("Employee name : $name");
+    print("Employee age : $age");
+    print("Employee position : $position");
+    print("Employee salary : $salary");
+  }
+}
+
+
+// Constructors with named parameters
+class Chair {
+  String? name;
+  String? color;
+
+  // Constructor
+  Chair({this.name, this.color});
+
+  void display() {
+    print("Chair name is $name and is $color in color.");
+  }
+}
+
+
+// Constructor with default values
+class Table {
+  String? name;
+  String? color;
+
+  // Constructor
+  Table({this.name = "Yottaduch", this.color = "beige"});
+
+  void display() {
+    print("The table's name is $name and is $color in color");
+  }
+}
+
+
 void main() {
   Bicycle bikykle = Bicycle();
   bikykle.brand = "Bap";
@@ -179,4 +228,12 @@ print("Roll Number : ${teacher.rollNumber}");
 
 College college = College("Dark Future College", "Kaalo Chowk", 89, 3);
 college.printInfo();
+
+
+Employee employee = Employee("Darby", 57, "Gambler");
+employee.displayInfo();
+
+
+Chair chair = Chair(color : "black", name : "Khum");
+chair.display();
 }
