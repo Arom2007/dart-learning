@@ -87,6 +87,40 @@ class SmallCar extends Car{
 }
 
 
+// Polymorphism in Dart
+// Polymorphism is the ability of an object to take on many forms.
+// Polymorphism can be done in dart using a technique called method overriding.
+// Overriding allows you to create a method in the child class that has the same name ast the method in the parent class.
+// The method in the child class overrides the method in the parent class.
+/* 
+Syntax:
+class ParentClass {
+void functionName() {
+  }
+}
+
+class ChildClass extends ParentClass {
+@override
+void functionName() {
+  }
+}
+*/
+
+class Animal {
+  void action() {
+    print("Animal is taking a shit.");
+  }
+}
+
+class Dog extends Animal {
+  @override 
+  void action() {
+    print("Dog is taking a shit.");
+  }
+}
+
+
+
 void main() {
   Student student = Student();
   student.name = "Dumraj";
@@ -108,4 +142,17 @@ void main() {
 
   SmallCar smallCar = SmallCar();
   smallCar.display();
+
+
+  print("-" * 60);
+
+
+  Animal animal = Animal();
+  animal.action();
+
+  Dog dog = Dog();
+  dog.action();
+
+
+  print("-" * 60);
 }
