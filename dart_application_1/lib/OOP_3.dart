@@ -77,6 +77,7 @@ class Car {
 
 
 class SmallCar extends Car{
+  // ignore: annotate_overrides, overridden_fields
   int numberOfSeats = 2;
 
   void display() {
