@@ -120,6 +120,86 @@ class Dog extends Animal {
 }
 
 
+// Static in Dart
+// The static keyword is used to define a variable or method that is shared by all instances of a class.
+/* 
+Syntax to declare a static variable in dart
+class ClassName {
+  static dataType variableName;
+}
+
+
+Syntax to initialise a static variable in dart
+class ClassName {
+  static dataType variableName = value;
+  // example
+  // static int num = 10;
+}
+
+
+Syntax to access a static variable in dart
+class ClassName {
+  static dataType variableName = value;
+
+  // Accessing the static variable inside the same class
+  void display() {
+    print(variableName);
+  }
+}
+
+void main() {
+  // Accessing static variable outside the class
+  dataType value = ClassName.variableName;
+}
+
+
+Syntax for static method in dart
+class ClassName {
+  static returnType methodName() {
+  // Statements
+  }
+}
+*/
+
+class Employee {
+  // Static variable
+  static int count = 0;
+
+  //constructor
+  Employee() {
+    count ++;
+  }
+
+  // Method to display the the value of count
+  void totalEmployee() {
+    print("Total Employee : $count");
+  }
+}
+
+
+class Stewdent {
+  int? id;
+  String? name;
+  static String schoolName = "Whiterun Secondary School";
+
+  Stewdent(this.id, this.name);
+
+  void display() {
+    print("ID : $id");
+    print("Name : $name");
+    print("School Name : ${Stewdent.schoolName}");
+  }
+}
+
+
+// Static Method in Dart
+class SimpleInterest {
+  static double calculateInterest(double principle, double rate, double time) {
+    return (principle * rate * time)/100;
+  }
+}
+
+
 
 void main() {
   Student student = Student();
@@ -155,4 +235,27 @@ void main() {
 
 
   print("-" * 60);
+
+
+  Employee e1 = Employee();
+  e1.totalEmployee();
+  Employee e2 = Employee();
+  e2.totalEmployee();
+  Employee e3 = Employee();
+  e3.totalEmployee();
+
+
+  print("-" * 60);
+
+
+  Stewdent s1 = Stewdent(55, "Dumkal Unc");
+  s1.display();
+  Stewdent s2 = Stewdent(56, "Scumjump Dhakal");
+  s2.display();
+
+
+  print("-" * 60);
+
+
+  print("The simple interest is \$${SimpleInterest.calculateInterest(1000, 2, 54)}");
 }
