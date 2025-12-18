@@ -53,6 +53,55 @@ class Person {
 }
 
 
+// Abstract Class in Dart
+// Abstract classes are classes that cannot be initialised.
+// It is used to define the behavior of another class that inherits it.
+// An abstract method is a method that is declared without an implementation.
+// It is declared with a semicolon (;) instead of a method body.
+
+/* 
+Syntax for abstract class:
+abstract class ClassName {
+  // Body of abstract class
+  method1();
+  method2();
+}
+
+*/
+
+
+abstract class Shape {
+  int dim1, dim2;
+  
+  // Constructor
+  Shape(this.dim1, this.dim2);
+
+  // Abstract Method
+  void area();
+}
+
+class Rectangle extends Shape {
+  // Constructor
+  Rectangle(super.dim1, super.dim2);
+
+  // Implementation of area
+  @override
+  void area() {
+    print("The area of the rectangle is ${super.dim1 * super.dim2}");
+  }
+}
+
+class Triangle extends Shape {
+  Triangle(super.dim1, super.dim2);
+
+  @override
+  void area() {
+    print("The area of the triangle is ${0.5 * super.dim1 * super.dim2}");
+  }
+}
+
+
+
 
 
 void main() {
@@ -96,4 +145,14 @@ void main() {
   for (days day in days.values) {
     print(day);
   }
+
+
+  print("-" * 60);
+  
+
+  Rectangle rectangle = Rectangle(10, 50);
+  rectangle.area();
+
+  Triangle triangle = Triangle(20, 30);
+  triangle.area();
 }
