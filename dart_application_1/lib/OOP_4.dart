@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, constant_identifier_names
 
 // An enum is a special type that represents a fixed number of constant values.
 /* 
@@ -11,6 +11,7 @@ enum enumName {
 }
 */
 
+// ignore: camel_case_types
 enum days {
   Sunday,
   Monday,
@@ -145,6 +146,84 @@ class Circle implements Area, Perimeter {
 }
 
 
+// Mixin in Dart
+// Mixins are a way of reusing the code in multiple classes.
+// The keywords used while working with mixins are mixin, with and on.
+
+// Rules for Mixin
+// Mixin cant be instantiated. You cant create an object of mixin.
+// Mixin is used to share code between multiple classes.
+// Mixin has no constructor and cannot be extended.
+// It is possible to use multiple mixins in a class.
+
+/* 
+Syntax for mixins:
+
+mixin Mixin1 {
+  // code
+}
+
+mixin Mixin2 {
+  // code
+}
+
+class ClassName with Mixin1, Mixin2 {
+  // code
+}
+*/
+
+mixin RunsOnElectricity {
+  void runsOnElectricity() {
+    print("This vehicle runs on electricity.");
+  }
+}
+
+mixin RunsOnPetrol {
+  void runsOnPetrol() {
+    print("This vehicle runs on petrol.");
+  }
+}
+
+class Car with RunsOnElectricity, RunsOnPetrol {
+  // Now class Car has access to runsOnElectricity() and runsOnPetrol() methods.
+}
+
+
+// Mixin using on Keyword
+// The on keyword is used to use a mixin only with a specific class.
+/* 
+Syntax for mixin using on keyword:
+mixin Mixin1 on Class1 {
+  // code
+}
+*/
+abstract class Animal {
+  // properties
+  String name;
+  double speed;
+
+  // constructor
+  Animal(this.name, this.speed);
+
+  // abstract method
+  void run();
+}
+
+// mixin CanRun is only used by class that extends Animal
+mixin CanRun on Animal {
+  // implementation of abstract method
+  @override
+  void run() => print('$name is Running at speed $speed');
+}
+
+class Dog extends Animal with CanRun {
+  // constructor
+  Dog(super.name, super.speed);
+}
+
+
+
+
 
 
 void main() {
@@ -206,4 +285,19 @@ void main() {
   Circle circle = Circle(6.5);
   circle.area();
   circle.perimeter();
+
+
+  print("-" * 60);
+
+
+Car car = Car();
+car.runsOnElectricity();
+car.runsOnPetrol();
+
+
+print("-" * 60);
+
+
+var dog = Dog('My Dog', 25);
+dog.run();
 }
