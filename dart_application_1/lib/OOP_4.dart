@@ -87,7 +87,7 @@ class Rectangle extends Shape {
   // Implementation of area
   @override
   void area() {
-    print("The area of the rectangle is ${super.dim1 * super.dim2}");
+    print("The area of the rectangle is ${super.dim1 * super.dim2}.");
   }
 }
 
@@ -96,10 +96,53 @@ class Triangle extends Shape {
 
   @override
   void area() {
-    print("The area of the triangle is ${0.5 * super.dim1 * super.dim2}");
+    print("The area of the triangle is ${0.5 * super.dim1 * super.dim2}.");
   }
 }
 
+
+// Interface in Dart
+// An interface defines a syntax that a class must follow.
+// It is a contract that defines the capabilities of a class.
+// It is used to achieve abstraction in the dart programming language.
+// When you implement an interface, you must implement all the properties and methods defined in the interface.
+// You can use class or abstract class to declare an interface.
+// Mostly abstract class is used to declare an interface.
+// In dart you cannot inherit from multiple classes, but you can implement multiple interfaces.
+
+/* 
+Syntax of Interface in Dart:
+class InterfaceName {
+  // code
+}
+
+class ClassName implements InterfaceName {
+  // code
+}
+*/
+// Abstract class area as interface
+abstract class Area {
+  void area();
+}
+// Abstract class perimeter as interface
+abstract class Perimeter {
+  void perimeter();
+}
+
+// Class implementing multiple interfaces
+class Circle implements Area, Perimeter {
+  double radius;
+  Circle(this.radius);
+
+  @override
+  void area() {
+    print("Area of circle with radius $radius cm is ${3.14 * radius * radius} cm.");
+  }
+  @override
+  void perimeter() {
+    print("Perimeter of circle with radius $radius cm is ${2 * 3.14 * radius} cm.");
+  }
+}
 
 
 
@@ -155,4 +198,12 @@ void main() {
 
   Triangle triangle = Triangle(20, 30);
   triangle.area();
+
+
+  print("-" * 60);
+
+
+  Circle circle = Circle(6.5);
+  circle.area();
+  circle.perimeter();
 }
