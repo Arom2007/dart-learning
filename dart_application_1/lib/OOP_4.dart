@@ -222,6 +222,39 @@ class Dog extends Animal with CanRun {
 }
 
 
+// Factory Constructor in Dart
+// A factory constructor is a constructor that can be used when you don't necessarily want a constructor to create a new instance of your class.
+// It provides more control over the object creation process.
+// It must have a return statement as it returns an existing instance if available.
+// It cannot use 'this' keyword.
+// An initialiser list cannot be used with a factory constructor.
+// It can be named or unnamed.
+// It is also used to return the cached instance of the class.
+/* 
+Syntax:
+class ClassName {
+  factor ClassName() {
+    // return ClassName instance
+  }
+}
+*/
+
+class Barea {
+  final int length;
+  final int breadth;
+  final int area;
+
+  const Barea._internal(this.length, this.breadth) : area = length * breadth;
+
+  factory Barea(int length, int breadth) {
+    if (length < 0 || breadth <0) {
+      throw Exception("Length and breadth must be positive!");
+    }
+    return Barea._internal(length, breadth);
+  }
+}
+
+
 
 
 
@@ -300,4 +333,20 @@ print("-" * 60);
 
 var dog = Dog('My Dog', 25);
 dog.run();
+
+
+print("-" * 60);
+
+
+Barea barea = Barea(10, 20);
+print("Area is ${barea.area}");
+
+Barea barea2 = Barea(-10, 20);
+print("Area is ${barea2.area}");
+
+
+print("-" * 60);
+
+
+
 }
