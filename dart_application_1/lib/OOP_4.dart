@@ -25,12 +25,12 @@ enum days {
 
 enum Gender {Male, Female, Memale, Fale}
 
-class Person {
+class Person1 {
   String? firstName;
   String? lastName;
   Gender? gender;
 
-  Person(this.firstName, this.lastName, this.gender);
+  Person1(this.firstName, this.lastName, this.gender);
 
   void display() {
     String jender = gender.toString();
@@ -244,8 +244,13 @@ class Barea {
   final int breadth;
   final int area;
 
+  // Private constructor
   const Barea._internal(this.length, this.breadth) : area = length * breadth;
+  // Here ' : area = length * breadth' is an initialiser list.
+  // It is used within a constructor to set instance variable's values.
+  // It is done before the constructor's main body of code executes.
 
+  // Factory constructor to add condition so that area is not negative.
   factory Barea(int length, int breadth) {
     if (length < 0 || breadth <0) {
       throw Exception("Length and breadth must be positive!");
@@ -253,6 +258,53 @@ class Barea {
     return Barea._internal(length, breadth);
   }
 }
+
+
+class Person {
+  // final fields
+  final String name;
+
+  // private constructor
+  Person._internal(this.name);
+
+  // static _cache field
+  static final Map<String, Person> _cache = <String, Person>{};
+
+  // factory constructor
+  factory Person(String name) {
+    if (_cache.containsKey(name)) {
+      return _cache[name]!;
+    } else {
+      final person = Person._internal(name);
+      _cache[name] = person;
+      return person;
+    }
+  }
+  // The point of this factory constructor is to check if there already exists an instance of the object and return it instead of creating a new instance to save memory.
+  // It checks the cache to see if the instance already exists and returns it.
+  // This saves memory as it does not have to create a new instance if it already exists.
+  // If it does not exist a new instance is created and it is added to the cache.
+}
+
+
+// Singleton in Dart
+// A singleton is a class that can only have one instance and provides a global point of access to it.
+// It is created by defining a factory constructor that always returns the same instance.
+// It is useful when you want to create a single instance of a class and use it throughout the application.
+
+// Singleton using dart factory
+class Singleton {
+ // static variable
+ static final Singleton _instance = Singleton._internal();
+ 
+// factory constructor
+ factory Singleton() {
+   return _instance;
+ }
+ // private constructor 
+ Singleton._internal();
+}
+
 
 
 
@@ -289,7 +341,7 @@ void main() {
   print("-" * 60);
 
 
-  Person p1 = Person("John", "Pork", Gender.Male);
+  Person1 p1 = Person1("John", "Pork", Gender.Male);
   p1.display();
 
 
@@ -323,30 +375,48 @@ void main() {
   print("-" * 60);
 
 
-Car car = Car();
-car.runsOnElectricity();
-car.runsOnPetrol();
+  Car car = Car();
+  car.runsOnElectricity();
+  car.runsOnPetrol();
 
 
-print("-" * 60);
+  print("-" * 60);
 
 
-var dog = Dog('My Dog', 25);
-dog.run();
+  var dog = Dog('My Dog', 25);
+  dog.run();
 
 
-print("-" * 60);
+  print("-" * 60);
 
 
-Barea barea = Barea(10, 20);
-print("Area is ${barea.area}");
+  Barea barea = Barea(10, 20);
+  print("Area is ${barea.area}");
 
-Barea barea2 = Barea(-10, 20);
-print("Area is ${barea2.area}");
+  // Barea barea2 = Barea(-10, 20);
+  // print("Area is ${barea2.area}"); // Exception occurs here
 
 
-print("-" * 60);
+  print("-" * 60);
 
+
+  final person1 = Person('John');
+  final person2 = Person('Harry');
+  final person3 = Person('John');
+
+  // hashcode of person1 and person3 are same
+  print("Person1 name is : ${person1.name} with hashcode ${person1.hashCode}");
+  print("Person2 name is : ${person2.name} with hashcode ${person2.hashCode}");
+  print("Person3 name is : ${person3.name} with hashcode ${person3.hashCode}");
+
+
+  print("-" * 60);
+
+
+ Singleton obj1 = Singleton();
+ Singleton obj2 = Singleton();
+ print(obj1.hashCode);
+ print(obj2.hashCode);
 
 
 }
