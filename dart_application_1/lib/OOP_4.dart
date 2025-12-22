@@ -339,6 +339,23 @@ class Data<T> {
 // They can be full of strings or integers or doubles depending on user needs.
 
 
+// Generic Methods in Dart
+// Generics can also be implemented to define functions that can work with multiple data types.
+T genericMethod<T> (T value){
+  return value;
+}
+
+// Generic Method with Multiple Parameters
+T genericMethod2<T, U>(T value1, U value2) {
+  return value1;
+}
+
+
+// Restricting the Type of Data in Generics
+class Dayta<T extends num> { // This restricts the class to only work with nums (int and double).
+  T data;
+  Dayta(this.data);
+}
 
 
 
@@ -472,5 +489,21 @@ void main() {
   print("IntData : ${integerData.data}");
   print("DoubleData : ${dubData.data}");
 
+
+  print("-" * 60);
+
+
+  print("Int : ${genericMethod<int>(123456)}");
+  print("String : ${genericMethod<String>("Banana")}");
+
+
+  print("-" * 60);
+
+
+  print(genericMethod2<int, String>(80085, "Peta San"));
+  print(genericMethod2<String, int>("Peta San", 8000));
+
+
+  print("-" * 60);
 
 }
