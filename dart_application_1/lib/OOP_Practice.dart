@@ -51,6 +51,10 @@ class House {
 }
 
 
+
+// Program to create an enum class for gender and print all values
+  enum Gender {male, female, hemale, shemale}
+
 void main() {
   print("Password : ${GeneratePassword.generateRandomPassword(10)}");
 
@@ -70,4 +74,14 @@ void main() {
 
   House house = House(675367, "Rekha House", 6700000000);
   house.displayInfo();
+
+
+  print("-" * 60);
+
+
+
+  for (Gender x in Gender.values) {
+    print(x);
+  }
+
 }
