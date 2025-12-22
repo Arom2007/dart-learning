@@ -306,6 +306,42 @@ class Singleton {
 }
 
 
+// Generic in Dart
+// Generics is a way to create a class, or function that can work with different types of data (objects).
+// It allows classes, functions and interfaces to be defined so that they work with a variety of data types without specifying the exact type until the code is used.
+
+// Suppose you need to create a class that can work with both int and double data types.
+// For that you may need to create one class for int and one class for double like this.
+class IntData {
+  int data;
+  IntData(this.data);
+}
+
+class DoubleData {
+  double data;
+  DoubleData(this.data);
+}
+// This is not good practice as both the class contain the same code.
+// This can be achieved within a single class using generics.
+class Data<T> {
+  T data;
+  Data(this.data);
+}
+
+// Generics Type Variable
+// Generics type variables are used to define the type of data that can be used with the class or method.
+// T works as a placeholder for the type of variable that will be defined later
+// E is an element variable
+// K is a key variable
+// V is a value variable
+
+// Lists and maps can work with different data types because they are a generic class.
+// They can be full of strings or integers or doubles depending on user needs.
+
+
+
+
+
 
 
 
@@ -417,6 +453,24 @@ void main() {
  Singleton obj2 = Singleton();
  print(obj1.hashCode);
  print(obj2.hashCode);
+
+
+ print("-" * 60);
+
+
+ IntData intData = IntData(10);
+ DoubleData doubleData = DoubleData(10.5);
+ print("IntData : ${intData.data}");
+ print("DoubleData : ${doubleData.data}");
+
+
+  print("-" * 60);
+
+  
+  Data<int> integerData = Data<int>(10);
+  Data<double> dubData = Data<double>(89.555);
+  print("IntData : ${integerData.data}");
+  print("DoubleData : ${dubData.data}");
 
 
 }
