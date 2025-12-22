@@ -53,7 +53,35 @@ class House {
 
 
 // Program to create an enum class for gender and print all values
-  enum Gender {male, female, hemale, shemale}
+enum Gender {male, female, hemale, shemale}
+
+
+// Program to create class Animal and another class Cat that extends Animal and adds new properties.
+abstract class Animal {
+  String name;
+  String color;
+
+  Animal(this.name, this.color);
+
+  void printInfo() {
+    print("Name is $name.");
+    print("Color is $color.");
+  }
+}
+
+class Cat extends Animal {
+  String nickName;
+
+  Cat(super.name, super.color, this.nickName);
+
+  @override
+  void printInfo() {
+    print("Cat's name is $name");
+    print("Cat's fur is $color");
+    print("Cat's nickname is $nickName");
+  }
+}
+
 
 void main() {
   print("Password : ${GeneratePassword.generateRandomPassword(10)}");
@@ -77,7 +105,6 @@ void main() {
 
 
   print("-" * 60);
-
 
 
   for (Gender x in Gender.values) {
