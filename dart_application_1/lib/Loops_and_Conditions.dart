@@ -1,5 +1,7 @@
 // ignore: unused_import
-import 'dart:io';
+// ignore_for_file: avoid_function_literals_in_foreach_calls
+
+// import 'dart:io';
 
 // CONDITIONS IN DART
 
@@ -51,10 +53,10 @@ print("Married? (Y/N)");
 // String? isMarried = stdin.readLineSync();
 String isMarried = "N";
 bool married = false;
-if (isMarried == "Y") {
+if (isMarried == "Y" || isMarried== "y") {
   married = true;
 }
-else if (isMarried == "N") {
+else if (isMarried == "N" || isMarried == "n") {
   married = false;
 }
 else {

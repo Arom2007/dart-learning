@@ -1,3 +1,6 @@
+// ignore: file_names
+// ignore: file_names
+
 import 'dart:io';
 void main() {
 // Program to check if number is odd or even.

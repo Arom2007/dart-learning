@@ -18,7 +18,7 @@ void main() {
   double div = num2 / num1; //double is used here because when dividing output may be in decimal
   
   print("Sum of two numbers is $sum.");
-  print("Differenec between two numbers is $diff.");
+  print("Difference between two numbers is $diff.");
   print("Product of two numbers is $mul.");
   print("$num2 divided by $num1 is equal to $div.");
     
@@ -37,7 +37,7 @@ void main() {
   
   
   // RULES FOR CREATING VARIABLES
-  // Variable names are case sensitive, i.e., a and A are different.
+  // Variable names are case sensitive, i.e., 'a' and 'A' are different.
   // A variable name can consist of letters and alphabets.
   // A variable name cannot start with a number.
   // Keywords are not allowed to be used as a variable name.
