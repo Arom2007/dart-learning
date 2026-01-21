@@ -88,6 +88,18 @@ void main() {
 
   // printLength(null);
   printLength("Jojo, this adventure is starting to get real bizarre!");
+
+
+  main2();
+
+
+  main3();
+
+
+  main4();
+
+
+  print("-" * 60);
 }
 
 
@@ -167,4 +179,84 @@ void printLength(String? text) {
     print("Length of text is ${text.length} characters.");
   }
   print("-" * 60);
+}
+
+
+
+
+void main2() {
+  // Late Keyword in Dart
+  // In Dart, the late keyword is used to declare a variable or field that will be initialized at a later time.
+  // It is used to declare a non-nullable variable that is not initialized at the time of declaration.
+
+  late String namename;
+
+  namename = "Long John";
+  print(namename);
+  print("-" * 60);
+
+
+  // Putting late in front of a variable declaration tells Dart the following:
+  // Don't assign a value to that variable yet.
+  // I will assign a value later.
+  // I will make sure the variable has a value before I use it.
+
+  Parson parson = Parson("John Kumar");
+  parson.greet();
+
+  print("-" * 60);
+} 
+
+
+class Parson {
+  late String namelame;
+
+  Parson(this.namelame);
+
+  void greet() {
+    print("Hello $namelame");
+  }
+}
+
+
+// Late keyword in class
+class Maanche {
+  late String fullName = getFullName();
+  late String firstName = fullName.split(" ").first;
+  late String lastName = fullName.split(" ").last;
+
+  String getFullName() {
+    print("getFullName function called");
+    return "Joseph Joestar";
+  }
+}
+
+void main3() {
+  Maanche maanche = Maanche();
+  print("First name : ${maanche.firstName}");
+  print("Last name : ${maanche.lastName}");
+  print("Full name : ${maanche.fullName}");
+
+  print("-" * 60);
+}
+
+
+// Late Final keyword in Dart
+// Student class
+class Student {
+  // late final variable
+  late final String nameger;
+
+  // constructor
+  Student(this.nameger);
+}
+
+// Here the name field is assigned a value only once.
+// If you try to assign a value to the name field again, you will get an error.
+
+void main4() {
+  // object of Student class
+  Student student = Student("Leborn");
+  print(student.nameger);
+  // student.nameger = "Doe"; // Error
 }
