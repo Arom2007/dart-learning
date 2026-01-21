@@ -13,6 +13,8 @@
 // In Dart, variables and fields are non-nullable by default, which means that they cannot have a null value unless you explicitly allow it.
 
 // How to declare a null value
+import 'dart:async';
+
 String? name;
 // This declares the variable name as a nullable variable (it can be either a null or a string).
 
@@ -79,17 +81,13 @@ void main() {
   profile4.printProfile();
 
 
+  print("-" * 60);
 
 
+  main1();
 
-
-
-
-
-
-
-
-
+  // printLength(null);
+  printLength("Jojo, this adventure is starting to get real bizarre!");
 }
 
 
@@ -122,4 +120,51 @@ class Profile {
     print("Name : ${name ?? "Unknown"}"); // If Name is entered as null it will display "Unknown"
     print("Bio : ${bio ?? "Empty"}"); // If bio is entered as null it will display "Empty"
   }
+}
+
+
+
+void main1() {
+// Type Promotion in Dart
+// Type promotion in Dart means that Dart automatically converts a value of one type to another.
+// Dart does it when it knows that the value is of a specific type.
+// Type promotion works by either promoting general types to specific subtypes or promoting nullable types to non-nullable types.
+  
+  Object name = "Kiryu Kazuma Dragon of Dojima";
+  // Here, print(name.length) will not work because Dart doesn't know that name is a String.
+
+  if(name is String) {
+    // name promoted from Object to String
+    print("The length of name is ${name.length}");
+  }
+
+  print("-" * 60);
+
+
+  String result;
+  // result has been promoted to a non-nullable type String
+  
+  if(DateTime.now().hour < 12) {
+    result = "Good Morning Fourth Tojo Clan Chairman";
+  }
+  else {
+    result = "Good Afternoon Fourth Tojo Clan Chairman";
+  }
+  print(result);
+  print("Length of string '$result' is ${result.length} characters.");
+  
+
+  print("-" * 60);
+}
+
+
+// In Dart, you can also thrown an exception if the variable is null.
+void printLength(String? text) {
+  if(text == null) {
+    throw Exception("The text is null");
+  }
+  else {
+    print("Length of text is ${text.length} characters.");
+  }
+  print("-" * 60);
 }
