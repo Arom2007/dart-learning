@@ -137,8 +137,10 @@ void tryingDartMath() {
   // Generating Random Boolean and Double Values
   double randomDouble = Random().nextDouble();
   bool randomBoolean = Random().nextBool();
+  int randomNUMBER = Random().nextInt(11);
   print("Randomly generated double value is $randomDouble.");
   print("Randomly generated boolean value is $randomBoolean.");
+  print("Randomly generated integer value is $randomNUMBER.");
 
 
   // Generating a List of Random Numbers in Dart
