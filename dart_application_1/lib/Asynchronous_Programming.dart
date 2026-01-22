@@ -91,8 +91,33 @@ Future<String> middleFunction() {
 void getData() async {
   String data = await middleFunction(); // Waits here, but only for this function
   print(data);
+
+  // Stream of data example
+  await for (String name in getMyName()) {
+    print(name); // Prints each name as it arrives
+  }
+  // Outputs one name per second
 }
 
 
 // Error handling is the same as regular code (using try-catch)
 
+
+// Streams in Dart
+// A stream is a sequence of asynchronous events representing multiple values that will arrive in the future.
+// A stream has one or more listeners, and all listeners will receive the same value.
+// A stream is like a Future, but for multiple values over time.
+// Think of it as a flowing river of data.
+
+// Creating a Stream using async* and yield
+Stream<String> getMyName() async* {
+  await Future.delayed(Duration(seconds: 1));
+  yield 'Kunty Puth';
+  await Future.delayed(Duration(seconds: 1));
+  yield 'Mark Henry Puhh';
+  await Future.delayed(Duration(seconds: 1));
+  yield 'Gargah Smith Economic State of the World';
+}
+// Here async* makes it an async generator and yield sends a value to the stream like 'pushing' data.
+
+// You can also use Stream.fromIterable(['A', 'B']) for simple lists.
