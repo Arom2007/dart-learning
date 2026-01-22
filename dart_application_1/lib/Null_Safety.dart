@@ -13,8 +13,6 @@
 // In Dart, variables and fields are non-nullable by default, which means that they cannot have a null value unless you explicitly allow it.
 
 // How to declare a null value
-import 'dart:async';
-
 String? name;
 // This declares the variable name as a nullable variable (it can be either a null or a string).
 

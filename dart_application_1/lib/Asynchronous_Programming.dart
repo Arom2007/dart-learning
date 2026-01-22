@@ -28,3 +28,67 @@
 // Future in Dart
 // In dart, 'Future' represents a value or error that is not yet available.
 // It is used to represent a potential value, or error, that will be available at some point in the future.
+// Future is Dart's way of saying, "I'll give you a value later". 
+// It is a promise that the value will arrive, but you can do other things in the mean time.
+
+
+// Function that returns a future
+Future<String> getUserName() async {
+  return Future.delayed(Duration(seconds: 2), () => "Mark I made him a steak!");
+}
+
+// You can also create a future using Future.value() that will reutrn the Future<String> immediately.
+Future<String> getUrName() {
+  return Future.value("Bloseph Bloshart");
+}
+
+
+// How to use future in Dart
+Future<String> getTheName() async {
+  return Future.delayed(Duration(seconds: 2), () => "Fart");
+}
+
+void main() {
+  getTheName().then((value) => print(value));
+  print("Waiting for data (it will come in 2 seconds)");
+
+  print("-" * 60);
+
+
+  // Async and Await in Dart
+  // Async or Await is a feature in Dart that allows us to write asynchronous code that looks and behave like synchronous code, making it easier to read.
+
+  // When a function is marked async, it signifies that it will carry out some work that could take some time and will return a Future aobject that wraps the result of that work
+  
+  // The await keyword allows you to delay the execution of an async function until the awaited Future has finished.
+  // It enables us to create code that appears to be synchronous but is actually asynchronous.
+  // Await doesn't pause the whole program but just the function it is part of.
+
+  // Example without async/await
+  print("Start");
+  middleFunction().then((data) => print(data));
+  print("End");
+  // Output: Start -> End -> Hello (after 5 seconds)
+
+  
+  print("-" * 60);
+
+
+  // Example with async/await
+  print("Start");
+  getData();
+  print("End");
+  // Output: Start -> End -> Hello (after 5 seconds)
+  // Output is the same as without async/await but code is easier to read and write
+}
+
+// Function example without async/await
+Future<String> middleFunction() {
+  return Future.delayed(Duration(seconds: 5), () => "Hello");
+}
+
+// Functionn example with async/await
+void getData() async {
+  String data = await middleFunction(); // Waits here, but only for this function
+  print(data);
+}
