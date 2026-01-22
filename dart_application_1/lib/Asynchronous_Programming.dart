@@ -80,6 +80,13 @@ void main() {
   print("End");
   // Output: Start -> End -> Hello (after 5 seconds)
   // Output is the same as without async/await but code is easier to read and write
+
+
+  main1();
+
+  main2();
+
+  main3();
 }
 
 // Function example without async/await
@@ -140,3 +147,81 @@ stream.listen((value){
 
 // Adding value to the stream
 // controller.add(<value_to_add>);
+
+// Managing the stream and canceling a stream
+/*
+StreamSubscription<int> streamSubscription = stream.listen((value) {
+  print("Value from controller : $value");
+});
+
+To cancel stream 
+streamSubscription.cancel();
+*/
+
+
+// There are four major classes in Dart's async libraries that are used to manage streams.
+  // Stream: It represents an asynchronous stream of data.
+  // EventSink: It is like a stream that flows in the opposite direction.
+  // StreamController: It simplifies stream management, automatically creating a stream and sink and also providing methods for controlling a stream's behavior.
+  // StreamSubscription: It saves the reference of the subscription and allows them to pause, resume or cancel the flow of data they receive.
+
+
+// There are four methods used in the stream
+  // listen(): Starts subscription, returns StreamSubscription.
+  // final subscription = myStream.listen()
+
+  // onError: Callback for errors.
+  // onError: (err) {print("Error": $err);}
+
+  // cancelOnError: If true (default), cancels on first error. Set false to continue.
+  // cancelOnError: false
+
+  // onDone: Runs when stream ends (after .close()).
+  // onDone: () {print("Stream done!");}
+
+
+// Keywords used in Stream
+  // async*: It is used in stream like how async is used in Future
+  // yield: It is used to emit values from a generator. It returns values from an iterable or stream.
+  // yield*: It is used to call its iterable or stream function recursively.
+
+
+  // Example of async
+  Future<int> doSomeLongTask() async {
+    await Future.delayed(const Duration(seconds: 2));
+    return 21;
+  }
+
+  void main1() async {
+    int result = await doSomeLongTask();
+    print(result);
+  }
+
+
+  // Example of async*
+  Stream<int> countForAWhile() async* {
+    for (int i = 1; i <= 5; i++) {
+      await Future.delayed(const Duration(seconds: 1));
+      yield i;
+    }
+  }
+
+  void main2() async {
+    await for (int i in countForAWhile()) {
+      print(i); // Prints 1 to 5, one integer per second
+    }
+  }
+
+
+  // Example of yield*
+Stream<int> str(int n) async* {
+  if (n > 0) {
+    await Future.delayed(Duration(seconds: 2));
+    yield n;
+    yield* str(n-2);
+  }
+}
+
+void main3() {
+  str(10).forEach(print);
+}
