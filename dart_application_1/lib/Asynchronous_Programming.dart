@@ -121,3 +121,22 @@ Stream<String> getMyName() async* {
 // Here async* makes it an async generator and yield sends a value to the stream like 'pushing' data.
 
 // You can also use Stream.fromIterable(['A', 'B']) for simple lists.
+// Streams have two types:
+  // Single-subscription - One listener only
+  // Broadcast - Multiple listeners (use StreamController.broadcast())
+
+// Syntax
+// StreamController<data_type> controller = StreamController<data_type>.broadcast();
+// StreamController<data_type> controller = StreamController<data_type>();
+// The controller can be accessed through the stream property
+// Stream stream = controller.stream;
+
+// Subscribing to a stream (getting access from the stream)
+/* 
+stream.listen((value){
+  print("Value from controller: $value");
+});
+*/
+
+// Adding value to the stream
+// controller.add(<value_to_add>);
