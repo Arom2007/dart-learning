@@ -92,3 +92,7 @@ void getData() async {
   String data = await middleFunction(); // Waits here, but only for this function
   print(data);
 }
+
+
+// Error handling is the same as regular code (using try-catch)
+
